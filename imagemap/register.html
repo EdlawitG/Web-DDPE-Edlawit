@@ -4,10 +4,33 @@
 <meta charset="UTF-8">
 <meta name=" description" content="About life-hack ">
 <meta name=" key words" content="Life, Jack Ma,recent posts,Eric Hoffer">
-
-
 <title>register</title>
-</head>
+	<script>
+function User(planeName){
+this.name=planeName;
+this.print=function(){
+document.getElementById("txt").innerHTML=this.name+" ";
+}
+}
+var UserMe=new User("txt");
+
+User.prototype.info=function(){
+var i=document.getElementById("name").value;
+var j=document.getElementById("phone").value;
+var k=document.getElementById("age").value;
+var p=document.getElementById("color").value;
+var l=document.getElementById("birthdate").value;
+var n=document.getElementById("skills").checked;
+var o=document.getElementById("country").value;
+document.getElementById("txt").innerHTML="<h1>Registered</h1>\n<h2>Welcome "+i+"</h2>\n<b>Your full info</b>\nName: <i>"+i+"</i>\nPhone Number: "+j+"\nYou are: "+k+" years old"+"\nYour favourite color: 'airplane'"+p+"\nBirthdate: "+l+"\nSkills: "+n+"\nCountry: "+o;
+var pre=document.getElementById("data");
+var arr=pre.childNodes;
+for(var x=0;x<(arr.length-4);x++){
+arr[x].innerHTML=" ";}
+}
+
+</script>
+	</head>
 
 <body >
     <table  width="100%">
@@ -29,10 +52,12 @@
                 <td colspan="2" align="right" ><a href="gotobottum.html">Go To bottum</a></td>  
                 <td width="10%"></td>
             </tr>
-            <tr>
+	<pre id ="txt" onclick="UserMe.print()"></pre>
+            <tr id="data">
                 <br>
                 <td width="10%"></td>
                 <td width="60%">
+			<p id="para">
                 <h1>Register</h1>
   		<form action ="" method="post">
  		 Full Name<br> <input type="text" id="name" maxlength="50"/>
@@ -75,6 +100,10 @@
                  <input type ="submit "value="Submit"/>
                  <input type ="Reset" value="Reset"/>
 <br />
+	<button onclick="UserMe.info()"> Submit</button>
+                      <input type ="reset" name="Reset" value="Reset"/>
+      <br /> 		
+			 </p>
   		</form>
 </td>
                <td width="20%">
